@@ -34,7 +34,7 @@
 	</footer>    
 
 <script>
-  $(document).ready(function() {
+  jQuery(document).ready(function($) {
   
 	var nice = $("html").niceScroll();  // The document page (body)
 	

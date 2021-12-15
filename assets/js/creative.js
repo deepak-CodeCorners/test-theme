@@ -77,7 +77,7 @@ $(document).ready(function() {
 })(jQuery); // End of use strict
 /* Parallax
  =============================================*/
-;
+
 (function ($) {
     include('../../js/jquery.rd-parallax.js');
 })(jQuery); 
