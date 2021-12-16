@@ -3,8 +3,11 @@
 	templatestock.co @templatestock
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 */
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
-(function($) {
+var $ = jQuery;
+
+jQuery(document).ready(function($){
 /* ---------------------------------------------- /*
 	 * owl header
 	/* ---------------------------------------------- */

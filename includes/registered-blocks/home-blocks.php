@@ -50,4 +50,24 @@ acf_register_block_type(array(
     'keywords'      =>array('home-gallery-section', 'quote'),
 ));
 
+acf_register_block_type(array(
+    'name'          =>'Home Blog Section',
+    'title'         =>__('Home Blog Section'),
+    'description'   =>__(''),
+    'render_template'=>'includes/blocks/home/home-blog-section.php',
+    'category'      =>'home-blocks',
+    'icon'          =>'admin-comments',
+    'keywords'      =>array('home-blog-section', 'quote'),
+));
+
+acf_register_block_type(array(
+    'name'          =>'Home Contact Section',
+    'title'         =>__('Home Contact Section'),
+    'description'   =>__(''),
+    'render_template'=>'includes/blocks/home/home-contact-section.php',
+    'category'      =>'home-blocks',
+    'icon'          =>'admin-comments',
+    'keywords'      =>array('home-contact-section', 'quote'),
+));
+
 ?>
