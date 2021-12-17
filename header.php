@@ -1,3 +1,7 @@
+<?php  
+$hss_carousels=get_field('hss_carousels');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,16 +69,18 @@
 				<div id="owl-demo" class="owl-carousel header1">
 				  <div>
 				  <div class="col-xs-12 col-sm-6 col-md-6 header-text">
-                    <h2 class="wow bounceIn animated" data-wow-delay=".40s">FRIENDLY <span>TEMPLATE</span> FOR <br/>YOUR WEBSITE</h2>
-                    <h3 class="wow bounceIn animated" data-wow-delay=".50s">FOR YOUR WEBSITE </h3>
-                    <p class="wow bounceIn animated" data-wow-delay=".60s">Lorem ipsum dolor sit amet, consectetur adipiscing elit.We ensure sit amet, consectetur adipiscing elit</p>
+                <?php foreach( $hss_carousels as $key=>$hss_carousel):?>
+                    <h2 class="wow bounceIn animated" data-wow-delay="<?php echo $key==0 ? 'action':'';?>"><?php echo $hss_carousel['hss_head'];?></h2>
+                    <h3 class="wow bounceIn animated" data-wow-delay=".50s"><?php echo $hss_carousel['hss_text']; ?></h3>
+                    <p class="wow bounceIn animated" data-wow-delay=".60s"><?php echo $hss_carousel['hss_para'];?></p>
                     <p>
-                        <div class="btn btn-primary btn-lg btn-ornge wow bounceIn animated" data-wow-delay="1s"><i class="hbtn"></i> <span>Click Here</span></i>
+                        <div class="btn btn-primary btn-lg btn-ornge wow bounceIn animated" data-wow-delay="1s"><i class="hbtn"></i> <span><?php echo $hss_carousel['hss_button'];?></span></i>
                         </div>
                     </p>
+                    <?php endforeach;?>
 					</div>               
 				</div>
-				 <div>
+				 <!-- <div>
 				  <div class="col-xs-12 col-sm-6 col-md-6 header-text">
                     <h2 class="wow bounceIn animated" data-wow-delay=".40s">FRIENDLY <span>THIS</span> FOR <br/>YOUR WEBSITE</h2>
                     <h3 class="wow bounceIn animated" data-wow-delay=".50s">FOR YOUR WEBSITE </h3>
@@ -83,8 +89,8 @@
                         <div class="btn btn-primary btn-lg btn-ornge wow bounceIn animated" data-wow-delay="1s"><i class="hbtn"></i> <span>Click Here</span></i>
                         </div>
                     </p>
-					</div>               
-				</div>
+					</div>    
+				</div> -->
 				</div>				 
 				</div>
 

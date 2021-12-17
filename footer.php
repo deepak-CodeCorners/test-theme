@@ -1,4 +1,18 @@
-    <!-- Footer -->
+<?php
+$hfs_links=get_field('hfs_links');
+$hfs_copytxt=get_field('hfs_copytxt');
+$hfs_button=get_field('hfs_button');
+$btn_txt=get_field('btn_txt');
+$hfs_address1=get_field('hfs_address1');
+$hfs_address2=get_field('hfs_address2');
+$hfs_phone=get_field('hfs_phone');
+$hfs_email=get_field('hfs_email');
+$hfs_email_link=get_field('hfs_email_link');
+$email_text=get_field('email_text');
+$link=get_field('link');
+$link_txt=get_field('link_txt');
+?>
+<!-- Footer -->
     <footer id="footer">
 	<!-- =============== container =============== -->
     <div class="container">
@@ -6,26 +20,25 @@
                 <div class="col-xs-12 col-sm-6 col-md-6">
 
 					<ul class="social-links">
-						<li><a class="wow fadeInUp animated" href="index.html#" style="visibility: visible; animation-name: fadeInUp;"><i class="fa fa-facebook"></i></a></li>
-						<li><a data-wow-delay=".1s" class="wow fadeInUp animated" href="index.html#" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;"><i class="fa fa-twitter"></i></a></li>
-						<li><a data-wow-delay=".2s" class="wow fadeInUp animated" href="index.html#" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;"><i class="fa fa-google-plus"></i></a></li>
-						<li><a data-wow-delay=".4s" class="wow fadeInUp animated" href="index.html#" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;"><i class="fa fa-pinterest"></i></a></li>
-						<li><a data-wow-delay=".5s" class="wow fadeInUp animated" href="index.html#" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;"><i class="fa fa-envelope"></i></a></li>
+                    <?php //echo "<pre>"; print_r($hfs_links); echo "</pre>";?>
+                    <?php foreach($hfs_links as $key=>$hfs_link):?>
+						<li><a class="wow fadeInUp animated" data-wow-delay="<?php echo $key==0 ? 'action':'';?>" href="<?php echo $hfs_link['hfs_button']['url'];?>" style="visibility: visible; animation-name: fadeInUp;"><i class="fa fa-<?php echo $hfs_link['hfs_class'];?>"></i></a></li>
+						
+                    <?php endforeach; ?>
 					</ul>
 
                     <p class="copyright">
-                        &copy; 2016 Be. Created By <a href="http://templatestock.co">Template Stock</a>
+                        &copy; <?php echo $hfs_copytxt;?> <a href="<?php echo $hfs_button['url'] ?>"><?php echo $btn_txt; ?></a>
 					</p>
 
 				</div>
 				<div data-wow-delay=".6s" class="col-xs-12 col-sm-6 col-md-6 wow bounceIn  animated" style="visibility: visible; animation-delay: 0.6s; animation-name: bounceIn;">
 
 					  <section class="widget widget_text" id="text-15">
-                         <h3 class="widget-title">California, United States</h3> <div class="textwidget">786, Firs Avenue, The Mall,<br>
-                        <p>Tel: 01 234-56786<br>
-                        Mobile: 01 234-56786<br>
-                        E-mail: <a href="#">info@Be.com</a></p>
-                        <a href="#">Get directions on the map</a> →</div>
+                         <h3 class="widget-title"><?php echo $hfs_address1; ?></h3> <div class="textwidget"><?php echo $hfs_address2;?><br>
+                        <p><?php echo $hfs_phone;?><br>
+                        <?php echo $hfs_email; ?><a href="<?php echo $hfs_email_link['url'];?>"><?php echo $email_text;?></a></p>
+                        <a href="<?php echo $link['url']; ?>"><?php echo $link_txt; ?></a> →</div>
                     </section>
 
 				</div>

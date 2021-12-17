@@ -2,6 +2,10 @@
 $hgs_text = get_field('hgs_text');
 $hgs_texts = get_field('hgs_texts');
 $hgs_gallerys = get_field('hgs_gallerys');
+$g_image=get_field('g_image');
+echo "<pre>";
+print($g_image);
+echo"</pre>";
 // print_r($hgs_gallerys);
 
 ?>
@@ -15,9 +19,9 @@ $hgs_gallerys = get_field('hgs_gallerys');
 	<div class="big-demo go-wide" data-js-module="filtering-demo">
 	<div class="container">            
             <div class="row">
-  <div class="filter-button-group button-group js-radio-button-group">
+  <div class="filter-button-group button-group js-radio-button-group"><button class="button is-checked" data-filter="*">show all</button>
   <?php foreach($hgs_gallerys as $keys=>$hgs_gallery):?>
-    <button class="button <?php echo $keys==0 ? 'is-checked':'';?>" data-filter="<?php echo $hgs_gallery['btn_filter'];?>"><?php echo $hgs_gallery['btn_text'];?></button>
+    <button class="button <?php echo $keys==0 ? 'action':'';?>" data-filter="<?php echo $hgs_gallery['btn_filter'];?>"><?php echo $hgs_gallery['btn_text'];?></button>
   <?php endforeach;?>
   </div>
 </div>
@@ -34,7 +38,12 @@ $hgs_gallerys = get_field('hgs_gallerys');
       <div class="element-item <?php echo $hgs_gallery['hgs_class'];?> " data-category="post-transition">
 
 	  <a href="<?php echo $hgs_gallery['image_button']['url']; ?>"> 
-	  <img src="<?php echo $hgs_gallery['g_image'];?>"/>
+	  <?php print_r($g_image);?>
+	  <?php foreach($g_image as $k=>$value):?>
+	  <?php if(!empty($value['inner_image'])): ?>
+	  <img src="<?php echo $value['inner_image'];?>"/>
+	  <?php endif; ?>
+	  <?php endforeach; ?>
 
 	  <?php //print_r($hgs_gallery);?>      
 		<div class="hover-img"> 
