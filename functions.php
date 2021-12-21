@@ -43,7 +43,7 @@ function custom_blocks($categories,$post){
                 ),
                 array(
                     'slug'=>'inner-page-blocks',
-                    'title'=>__('Inner Page Blocks','inner-page-blocks'),
+                    'title'=>__('Inner Page Blocks','inner-pages-blocks'),
                 ),
             )
         );  
@@ -57,4 +57,53 @@ function register_acf_block_types(){
 if(function_exists('acf_register_block_type')){
     add_action('acf/init','register_acf_block_types');
 }
+
+//Theme options with ACF Plugin
+if( function_exists('acf_add_options_page') ) {
+    
+    acf_add_options_page(array(
+        'page_title'    => 'Theme Options',
+        'menu_title'    => 'Theme Options',
+        'menu_slug'     => 'theme-options',
+        'capability'    => 'edit_posts',
+        'redirect'      => true
+    ));
+    
+    acf_add_options_sub_page(array(
+        'page_title'    => 'Header Settings',
+        'menu_title'    => 'Header Setting',
+        'parent_slug'   => 'theme-options',
+    ));
+    
+    acf_add_options_sub_page(array(
+        'page_title'    => 'Footer Settings',
+        'menu_title'    => 'Footer Settings',
+        'parent_slug'   => 'theme-options',
+    ));
+
+}
+
+function my_body_classes( $classes ) {
+ 
+	if(is_front_page()){
+    	$classes =array("home-page", "main-layout");
+	}else{
+		$classes =array("inner-pages", "main-layout");
+	}
+	return $classes;
+}
+add_filter('body_class','my_body_classes');
 ?>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    //  $alert=alert("alert");
+$(document).on("click", "#menu-primary-menu li", function() {
+    var scrollTo = $(this).find('a').attr('href');
+    $('html, body').animate({
+        scrollTop:$(scrollTo).offset().top - 80
+    }, 500);
+});
+
+</script>
+

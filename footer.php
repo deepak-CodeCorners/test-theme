@@ -1,7 +1,9 @@
 <?php
 $hfs_links=get_field('hfs_links');
+//print_r($hfs_links);
 $hfs_copytxt=get_field('hfs_copytxt');
 $hfs_button=get_field('hfs_button');
+//print_r($hfs_button);
 $btn_txt=get_field('btn_txt');
 $hfs_address1=get_field('hfs_address1');
 $hfs_address2=get_field('hfs_address2');
@@ -20,15 +22,17 @@ $link_txt=get_field('link_txt');
                 <div class="col-xs-12 col-sm-6 col-md-6">
 
 					<ul class="social-links">
+                    <?php if(!empty($hfs_links)): ?>
                     <?php //echo "<pre>"; print_r($hfs_links); echo "</pre>";?>
-                    <?php foreach($hfs_links as $key=>$hfs_link):?>
+                    <?php foreach($hfs_links as $key=>$hfs_link): ?>
 						<li><a class="wow fadeInUp animated" data-wow-delay="<?php echo $key==0 ? 'action':'';?>" href="<?php echo $hfs_link['hfs_button']['url'];?>" style="visibility: visible; animation-name: fadeInUp;"><i class="fa fa-<?php echo $hfs_link['hfs_class'];?>"></i></a></li>
 						
                     <?php endforeach; ?>
+                    <?php endif;?>
 					</ul>
 
                     <p class="copyright">
-                        &copy; <?php echo $hfs_copytxt;?> <a href="<?php echo $hfs_button['url'] ?>"><?php echo $btn_txt; ?></a>
+                        <?php echo $hfs_copytxt;?> <a href="<?php echo $hfs_button['url']; ?>"><?php echo $btn_txt; ?></a>
 					</p>
 
 				</div>

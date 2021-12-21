@@ -28,34 +28,7 @@ $hbs_images=get_field('hbs_images');
 					  </div>
                   </div>
                   <?php endforeach;?>        
-				 <!-- <div class="col-xs-12 col-sm-4 col-md-4 wow bounceIn animated" data-wow-delay=".4s">
-                      <div class="blog-img">
-						<img src="assets/img/blog2.JPG"/>
-					  </div>
-					  <div class="row">
-					  <div class="data">30</div>
-					  <div class="month">March</div>
-					  </div>
-					  <div class="row">
-					  <h3>Travelling with kids Quensland Capricorn Coast</h3>
-					  <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Vestibulum ac vehicula leo dulam nullam rhoncus tortor at dignissim vehicula.</p>
-					  <a href="blog-single.html">MORE</a>
-					  </div>
-                  </div>        
-				 <div class="col-xs-12 col-sm-4 col-md-4 wow fadeInDown animated" data-wow-delay=".3s">
-                      <div class="blog-img">
-						<img src="assets/img/blog3.JPG"/>
-					  </div>
-					  <div class="row">
-					  <div class="data">30</div>
-					  <div class="month">March</div>
-					  </div>
-					  <div class="row">
-					  <h3>Travelling with kids Quensland Capricorn Coast</h3>
-					  <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Vestibulum ac vehicula leo dulam nullam rhoncus tortor at dignissim vehicula.</p>
-					  <a href="blog-single.html">MORE</a>
-					  </div>
-                  </div>         -->
+				
             </div>
         </div>   
 		<!-- =============== container end =============== -->		

@@ -70,4 +70,14 @@ acf_register_block_type(array(
     'keywords'      =>array('home-contact-section', 'quote'),
 ));
 
+acf_register_block_type(array(
+    'name'          =>'Home Slider Section',
+    'title'         =>__('Home Slider Section'),
+    'description'   =>__(''),
+    'render_template'=>'includes/blocks/home/home-slider-section.php',
+    'category'      =>'home-blocks',
+    'icon'          =>'admin-comments',
+    'keywords'      =>array('home-slider-section', 'quote'),
+));
+
 ?>

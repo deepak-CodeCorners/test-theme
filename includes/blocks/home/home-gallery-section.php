@@ -2,10 +2,8 @@
 $hgs_text = get_field('hgs_text');
 $hgs_texts = get_field('hgs_texts');
 $hgs_gallerys = get_field('hgs_gallerys');
-$g_image=get_field('g_image');
-echo "<pre>";
-print($g_image);
-echo"</pre>";
+//$g_image=get_field('g_image');
+//echo "<h1>".gettype($g_image)."</h1>";
 // print_r($hgs_gallerys);
 
 ?>
@@ -37,15 +35,18 @@ echo"</pre>";
 	<?php foreach($hgs_gallerys as $keys=>$hgs_gallery):?>
       <div class="element-item <?php echo $hgs_gallery['hgs_class'];?> " data-category="post-transition">
 
-	  <a href="<?php echo $hgs_gallery['image_button']['url']; ?>"> 
-	  <?php print_r($g_image);?>
-	  <?php foreach($g_image as $k=>$value):?>
-	  <?php if(!empty($value['inner_image'])): ?>
-	  <img src="<?php echo $value['inner_image'];?>"/>
-	  <?php endif; ?>
-	  <?php endforeach; ?>
+	  <a href="<?php echo $hgs_gallery['image_button']['url']; ?>">
+	  <?php if(!empty($hgs_gallery['g_image'])) :?>
+		<img src="<?php echo $hgs_gallery['g_image'];?>"/>    
+	  <?php endif;?>
+	  
+	  <?php //foreach($g_image as $k=>$value):?>
+	<?php //endforeach; ?>
+	<?php //echo "<h1>".gettype($g_image)."</h1>";?>
+	<?php //foreach($g_image as $key=>$values):?>
 
-	  <?php //print_r($hgs_gallery);?>      
+	  <?php //print_r($hgs_gallery);?>  
+	  <?php //foreach($hgs_gallerys as $keys=>$hgs_gallery):?>    
 		<div class="hover-img"> 
 		<h2><?php echo $hgs_gallery['image_text']; ?></h2>
 		<i class="fa fa-camera camera"></i>
