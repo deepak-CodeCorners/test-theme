@@ -44,7 +44,7 @@
                         array(
                             'menu'=>'Primary-Menu',
                             'container'=>'div',
-                            'menu_class'=>'nav navbar-nav navbar-right',
+                            'menu_class'=>'nav navbar-nav navbar-right page-scroll',
                         )
                     );?>
                     
